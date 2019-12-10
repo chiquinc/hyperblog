@@ -12,3 +12,13 @@ history --> Muestra el historial de todos lo comandos realizados
 
 git add nomArchivo a agregar
 
+
+
+
+
+git remote add origin https://github.com/cchiquin/hyperblog.git  -- Enlazar nuestro repositorio a un repositorio remoto
+git remote  -- para cer 
+
+
+
+
