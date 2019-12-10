@@ -1,0 +1,14 @@
+toria git show 				  	-> Muestra todos los cambios historicos del archivo incluyevto y quien los hizo
+git log nomArchivo.txt		-> Historia entera de un archivo.
+
+Seguridad
+Open SSL --> seguridad de UNIX, LUNUZ y MAC... Pero no esta en Windows (El ,ameja otras librerias)
+
+Comandos UNIX, LINux, MAC
+ls 					--> 	lista los archivos
+touch nomArchiv.txt --> Crea un archivo vacio
+history --> Muestra el historial de todos lo comandos realizados
+!NumComando --> Repite el comando del historial	
+
+git add nomArchivo a agregar
+
