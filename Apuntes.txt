@@ -65,4 +65,23 @@ ssh-add ~/.ssh/id_rsa
 Como anterior mente habiamos declarado el origen de nuestro proyecto a GitHub con https, ahora debemos cambiarlo por el ssh de github con:
 git remote set-url origin git@github.com:cchiquin/hyperblog.git
 
+y con eso listo, estamos conectados de forma segura no pide clave.
+
+------------------------------------------ COMANDOS
+git log                                     --> muestra el historial de los commits
+git log --all                               --> muestra TODO el historial de los commits
+git log --all --graph                       --> muestra el historial de como han funcionado las realizamas
+git log --all --graph --decorate --oneline  --> muestra todo lo anterior pero comprimido
+
+crear alias de los comandos
+alias nomAlias="git log --all --graph --decorate --oneline"
+ejemplo
+alias arbolito="git log --all --graph --decorate --oneline"
+
+
+------------------------------------------ CREANDO TAGS
+
+
+
+
 
