@@ -17,8 +17,52 @@ git add nomArchivo a agregar
 
 
 git remote add origin https://github.com/cchiquin/hyperblog.git  -- Enlazar nuestro repositorio a un repositorio remoto
-git remote  -- para cer 
+git remote                                                       -- para ver el repositorio remoto como lo llamamos 
+git remote -v 
+git push origin mastes                                           -- Envia al origen los cambios del master
+--por ser la primera vez y existir commits distintos en el origen y en el realizar un push da error para ello
+git pull oringin master --allow-unrelated-histories
 
 
+
+
+git config -l       -- veremos la configuracion de git 
+
+******************************************* LLAVES PUBLICAS Y PROVADAS
+NOTAS: las llaves se crean por usuario NO por repositorios
+
+para ellos verificamos nuestro email de usuario git
+para ver cual tenemos realizamos
+    git config -l    --- en mi caso tengo el email correcto
+user.email=cecchinfcarmen@gmail.com
+en caso de que sea necesario cambiar el email, se usa el siguiente comando
+    git config --global user.email "nuevoEmail@gmail.com"
+
+------------------------------------------ CREANDO LA LLAVE PÚBLICA SSH
+SSH -- Secure Shell
+se puede hacer desde cualquier lugar, pero es una buena practica estar en el home:
+ssh-keygen -t rsa -b 4096 -C "cecchinfcarmen@gmail.com"
+ssh -keygen             -- generador de clave ssh
+-t rsa                  -- Especificar cual algoritm|o se va a utilizar en este caso rsa
+-b 4096                 -- definir la complejidad del algoritmo 
+-C "email@gmail.com"     -- definir el correo al que va a estar conectada esta llave
+
+nos va a pedir ingresar una contraseña para dar mayor seguridad y nos va a indicar la ruta donde las va a crear
+Luego podemos buscarla en ese archivo
+El proceso para Windos y Lunix es el mismo pero para mac no
+
+----------- Configuración de Windos
+Esta llave hay que llevarla al entorno, es hacer que el SO sepa que la llave existe.
+Primero: revisar que el servidor de llaves este prendido, para ello ejecutamos el siguiente comando
+eval $(ssh-agent -s)
+si nos aparece .. Agent pid 493 indica que el agente esta corriendo en el identificador del proceso 493.
+
+Segundo: agregar la llave al servidor de llaves, para ello ejecutamos el siguiente comando:
+ssh-add ~/.ssh/id_rsa
+
+------------------------------------------ CONEXION A GIT CON SSH
+
+Como anterior mente habiamos declarado el origen de nuestro proyecto a GitHub con https, ahora debemos cambiarlo por el ssh de github con:
+git remote set-url origin git@github.com:cchiquin/hyperblog.git
 
 
